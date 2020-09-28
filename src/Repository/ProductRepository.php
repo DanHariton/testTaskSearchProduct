@@ -19,6 +19,20 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
+    /**
+     * @param $id
+     * @return Product|null
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findOneById($id)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */

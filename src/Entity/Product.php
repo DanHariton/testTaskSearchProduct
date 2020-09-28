@@ -37,11 +37,6 @@ class Product
      */
     private $price;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $countSearches;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -91,18 +86,6 @@ class Product
     public function setPrice(int $price): self
     {
         $this->price = $price;
-
-        return $this;
-    }
-
-    public function getCountSearches(): ?int
-    {
-        return $this->countSearches;
-    }
-
-    public function setCountSearches(int $countSearches): self
-    {
-        $this->countSearches = $countSearches;
 
         return $this;
     }
