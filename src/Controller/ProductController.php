@@ -40,7 +40,7 @@ class ProductController extends AbstractController
             $product = $em->getRepository(Product::class)->findOneById($id);
 
             if (!$product) {
-                return new Response('', Response::HTTP_FOUND);
+                return new Response('', Response::HTTP_NOT_FOUND);
             }
 
             $productCache = $cache->getItem('product' . $id);
