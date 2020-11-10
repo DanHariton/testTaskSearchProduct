@@ -1,5 +1,5 @@
 # test task
-test task to BOOTIQ
+test task to BOOTIQ (Symfony)
 
 # Installation 
 
